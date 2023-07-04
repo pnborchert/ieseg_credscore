@@ -131,7 +131,7 @@ class WOEEncoder:
     # fit and transform training data
     def fit_transform(self, df, stop_limit=0.05, **kwargs):
         self.fit(df, stop_limit, **kwargs)
-        return self.transform(df)
+        return self.transform(df, **kwargs)
 
     # lookup quantiles from train set
     def _lookup_cat(self, x):
@@ -145,7 +145,7 @@ class WOEEncoder:
             return "nan"
     
     # transform
-    def transform(self, df, impute=False, impute_value=""):
+    def transform(self, df, impute=False, impute_value="", **kwargs):
         df_copy = df.copy()
         transform_vec = np.vectorize(lambda level: self.fit_dict[str(level)])
         

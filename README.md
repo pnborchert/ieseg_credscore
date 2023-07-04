@@ -25,6 +25,8 @@
         .transform
 
         - `df`: Transform pred_var based on fitted bins.
+        - `impute`: Boolean indicating whether to impute missing values. default: False
+        - `impute_value`: Category level to impute missing values with. default: 'Missing' or 'nan'
 
         .fit_transform
 
@@ -53,6 +55,8 @@
         .transform
 
         - `df`: Transform pred_var based on fitted bins
+        - `impute`: Boolean indicating whether to impute missing values. default: False
+        - `impute_value`: Category level to impute missing values with. default: 'Missing' or 'nan'
 
         .fit_transform
 

@@ -96,10 +96,10 @@ class OBGEncoder:
     # fit and transform training data
     def fit_transform(self, df, max_delta=0.05, min_bins=3, **kwargs):
         self.fit(df, max_delta, min_bins, **kwargs)
-        return self.transform(df)
+        return self.transform(df, **kwargs)
     
     # transform 
-    def transform(self, df, impute=False, impute_value=""):
+    def transform(self, df, impute=False, impute_value="", **kwargs):
         df_copy = df.copy()
         transform_vec = np.vectorize(lambda level: self.fit_dict[str(level)])
 
